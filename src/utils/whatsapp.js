@@ -1,95 +1,119 @@
-// WhatsApp Message Generator
+// WhatsApp Message Generator - Formato Profesional de Restaurante
 import config from '../data/config.json';
 import { formatCurrency } from './formatters';
 
 export function generateWhatsAppMessage(cartState) {
   const { items, orderType, deliveryFee, subtotal, total, customer, paymentMethod, cashAmount, globalNotes } = cartState;
 
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('es-UY', { day: '2-digit', month: '2-digit', year: 'numeric' });
+  const timeStr = now.toLocaleTimeString('es-UY', { hour: '2-digit', minute: '2-digit' });
+  const orderId = `AKM-${Math.floor(1000 + Math.random() * 9000)}`;
+
   const lines = [];
 
-  lines.push('🍣 *NUEVO PEDIDO — AKAMARU SUSHI CLUB*');
-  lines.push('━━━━━━━━━━━━━━');
-  lines.push('🛍️ *PEDIDO*');
+  // Encabezado de Marca
+  lines.push('🍣 *AKAMARU SUSHI CLUB*');
+  lines.push(`🏮 *Pedido #${orderId}*`);
+  lines.push(`📅 ${dateStr} • ${timeStr} hs`);
+  lines.push('──────────────────────────────');
+
+  // Detalle del Pedido
+  lines.push('🥢 *DETALLE DEL PEDIDO*');
   lines.push('');
 
-  items.forEach((item) => {
-    lines.push(`${item.quantity}x ${item.name}`);
+  items.forEach((item, index) => {
+    const itemTotal = (item.price + (item.extras ? item.extras.reduce((acc, ex) => acc + ex.price, 0) : 0)) * item.quantity;
+    lines.push(`*${item.quantity}x ${item.name}* — ${formatCurrency(itemTotal)}`);
+    
     if (item.extras && item.extras.length > 0) {
       item.extras.forEach((extra) => {
-        lines.push(`   + ${extra.name} (${formatCurrency(extra.price)})`);
+        lines.push(`   └ ➕ *Extra:* ${extra.name} (+${formatCurrency(extra.price)})`);
       });
     }
     if (item.removedIngredients && item.removedIngredients.length > 0) {
       item.removedIngredients.forEach((rem) => {
-        lines.push(`   Sin ${rem}`);
+        lines.push(`   └ ➖ *Sin:* ${rem}`);
       });
     }
     if (item.notes) {
-      lines.push(`   Nota: "${item.notes}"`);
+      lines.push(`   └ 💬 *Nota:* _"${item.notes}"_`);
     }
     lines.push('');
   });
 
-  lines.push('━━━━━━━━━━━━━━');
-  lines.push('📦 *TIPO DE PEDIDO*');
+  lines.push('──────────────────────────────');
+
+  // Modalidad y Datos de Entrega
   if (orderType === 'delivery') {
-    lines.push('Delivery (35–60 min)');
+    lines.push('🛵 *MODALIDAD: DELIVERY EXPRESS*');
+    lines.push(`⏱️ *Tiempo estimado:* ${config.restaurant.deliveryTime}`);
     lines.push('');
-    lines.push('📍 *DIRECCIÓN DE ENTREGA*');
-    lines.push(`Cliente: ${customer.name || 'Sin nombre especificado'}`);
-    lines.push(`Teléfono: ${customer.phone || 'Sin teléfono'}`);
-    lines.push(`Dirección: ${customer.street || ''} ${customer.doorNumber ? '#' + customer.doorNumber : ''}`);
-    if (customer.apartment) lines.push(`Apartamento: ${customer.apartment}`);
-    if (customer.neighborhood) lines.push(`Barrio: ${customer.neighborhood}`);
-    if (customer.reference) lines.push(`Referencia: ${customer.reference}`);
+    lines.push('📍 *DATOS DE ENTREGA*');
+    lines.push(`👤 *Cliente:* ${customer.name || 'No especificado'}`);
+    lines.push(`📱 *Teléfono:* ${customer.phone || 'No especificado'}`);
+    lines.push(`🏠 *Dirección:* ${customer.street || ''} ${customer.doorNumber ? '#' + customer.doorNumber : ''}`);
+    if (customer.apartment) lines.push(`🏢 *Apto / Piso:* ${customer.apartment}`);
+    if (customer.neighborhood) lines.push(`🏙️ *Barrio:* ${customer.neighborhood}`);
+    if (customer.reference) lines.push(`🧭 *Referencia:* _${customer.reference}_`);
   } else {
-    lines.push('Retiro en el local (20–30 min)');
+    lines.push('🏪 *MODALIDAD: RETIRO EN LOCAL (Take Away)*');
+    lines.push(`⏱️ *Listo en:* ${config.restaurant.pickupTime}`);
     lines.push('');
-    lines.push('🏪 *DATOS DEL CLIENTE*');
-    lines.push(`Cliente: ${customer.name || 'Sin nombre especificado'}`);
-    lines.push(`Teléfono: ${customer.phone || 'Sin teléfono'}`);
-    lines.push(`Retira en: ${config.restaurant.address}`);
+    lines.push('👤 *DATOS DEL CLIENTE*');
+    lines.push(`Cliente: ${customer.name || 'No especificado'}`);
+    lines.push(`Teléfono: ${customer.phone || 'No especificado'}`);
+    lines.push(`📍 *Dirección de retiro:* ${config.restaurant.address}`);
   }
 
-  lines.push('');
-  lines.push('💳 *MEDIO DE PAGO*');
+  lines.push('──────────────────────────────');
+
+  // Medio de Pago
+  lines.push('💳 *FORMA DE PAGO*');
   if (paymentMethod === 'cash') {
     const change = Math.max(0, cashAmount - total);
-    lines.push('Efectivo');
-    lines.push(`Paga con: ${formatCurrency(cashAmount)}`);
-    lines.push(`Cambio: ${formatCurrency(change)}`);
+    lines.push('💵 *Efectivo contra entrega*');
+    lines.push(`• Paga con: ${formatCurrency(cashAmount)}`);
+    lines.push(`• Cambio a recibir: *${formatCurrency(change)}*`);
   } else if (paymentMethod === 'transfer') {
-    lines.push('Transferencia bancaria');
-    lines.push(`Banco: ${config.restaurant.bankInfo.bank}`);
-    lines.push(`Cuenta: ${config.restaurant.bankInfo.accountNumber}`);
-    lines.push(`Alias: ${config.restaurant.bankInfo.alias}`);
-    lines.push('(Se adjuntará comprobante a continuación)');
+    lines.push('🏦 *Transferencia Bancaria (BROU)*');
+    lines.push(`• Banco: ${config.restaurant.bankInfo.bank}`);
+    lines.push(`• Cuenta: \`${config.restaurant.bankInfo.accountNumber}\``);
+    lines.push(`• Alias: \`${config.restaurant.bankInfo.alias}\``);
+    lines.push(`• Titular: ${config.restaurant.bankInfo.holder}`);
+    lines.push('📎 _(Enviaré el comprobante por aquí a continuación)_');
   } else if (paymentMethod === 'mercadopago') {
-    lines.push('Mercado Pago');
+    lines.push('📱 *Mercado Pago*');
     if (config.restaurant.mercadoPagoLink) {
-      lines.push(`Enlace: ${config.restaurant.mercadoPagoLink}`);
+      lines.push(`• Link de pago directo: ${config.restaurant.mercadoPagoLink}`);
     } else {
-      lines.push('(Coordinar link de pago)');
+      lines.push('• _(Por favor enviar link o QR para abonar)_');
     }
   }
 
-  lines.push('━━━━━━━━━━━━━━');
-  lines.push(`💰 Subtotal: ${formatCurrency(subtotal)}`);
+  lines.push('──────────────────────────────');
+
+  // Resumen Financiero
+  lines.push('🧾 *RESUMEN DE CUENTA*');
+  lines.push(`• Subtotal: ${formatCurrency(subtotal)}`);
   if (orderType === 'delivery') {
-    lines.push(`🛵 Envío: ${formatCurrency(deliveryFee)}`);
+    lines.push(`• Costo de envío: ${formatCurrency(deliveryFee)}`);
   } else {
-    lines.push('🏪 Envío: $U 0 (Retiro en local)');
+    lines.push('• Costo de envío: $U 0 (Retiro en local)');
   }
-  lines.push(`💵 *TOTAL: ${formatCurrency(total)}*`);
-
-  if (globalNotes && globalNotes.trim()) {
-    lines.push('━━━━━━━━━━━━━━');
-    lines.push('📝 *Observaciones generales:*');
-    lines.push(globalNotes.trim());
-  }
-
   lines.push('');
-  lines.push('🙏 *¡Muchas gracias por elegir Akamaru Sushi Club!*');
+  lines.push(`⭐ *TOTAL A PAGAR: ${formatCurrency(total)}*`);
+
+  // Observaciones Generales
+  if (globalNotes && globalNotes.trim()) {
+    lines.push('──────────────────────────────');
+    lines.push('📝 *OBSERVACIONES GENERALES:*');
+    lines.push(`_"${globalNotes.trim()}"_`);
+  }
+
+  lines.push('──────────────────────────────');
+  lines.push('✨ *¡Muchas gracias por elegir Akamaru!*');
+  lines.push('🎌 _赤丸寿司倶楽部 — Tradición japonesa con actitud_');
 
   return lines.join('\n');
 }

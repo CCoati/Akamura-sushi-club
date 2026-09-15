@@ -2606,3 +2606,25 @@
     padding: 16px 18px max(18px, env(safe-area-inset-bottom));
   }
 }
+
+/* ==========================================================================
+   Hide Netlify Drawer, Feedback Widgets & "Powered by Netlify" badges
+   ========================================================================== */
+#netlify-feedback-root,
+.netlify-badge,
+[data-netlify-feedback],
+[class*="netlify-badge"],
+iframe[src*="netlify"],
+div[id*="netlify-feedback"],
+div[class*="netlify-feedback"],
+a[href*="netlify.com"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+  z-index: -9999 !important;
+}
