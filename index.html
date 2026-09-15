@@ -40,6 +40,55 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@600;700;900&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" 
       rel="stylesheet" 
     />
+
+    <!-- Netlify Badge & Feedback Blocker -->
+    <script>
+      (function() {
+        try {
+          localStorage.setItem('netlify-badge-hidden', 'true');
+          localStorage.setItem('netlify-feedback-hidden', 'true');
+          sessionStorage.setItem('netlify-badge-hidden', 'true');
+        } catch(e) {}
+
+        function killNetlifyBadge() {
+          try {
+            document.querySelectorAll('*').forEach(function(el) {
+              var tag = el.tagName ? el.tagName.toLowerCase() : '';
+              var id = el.id ? el.id.toLowerCase() : '';
+              var cls = (typeof el.className === 'string') ? el.className.toLowerCase() : '';
+              if (
+                tag.indexOf('netlify') !== -1 ||
+                id.indexOf('netlify') !== -1 ||
+                cls.indexOf('netlify') !== -1 ||
+                el.hasAttribute('data-netlify-badge') ||
+                el.hasAttribute('data-netlify-deploy-id')
+              ) {
+                el.style.setProperty('display', 'none', 'important');
+                el.style.setProperty('opacity', '0', 'important');
+                el.style.setProperty('visibility', 'hidden', 'important');
+                el.style.setProperty('pointer-events', 'none', 'important');
+                el.style.setProperty('position', 'absolute', 'important');
+                el.style.setProperty('left', '-9999px', 'important');
+                if (el.parentNode) el.parentNode.removeChild(el);
+              }
+              if (el.shadowRoot) {
+                var sRootContent = el.shadowRoot.innerHTML || '';
+                if (sRootContent.toLowerCase().indexOf('netlify') !== -1) {
+                  el.style.setProperty('display', 'none', 'important');
+                  if (el.parentNode) el.parentNode.removeChild(el);
+                }
+              }
+            });
+          } catch(err) {}
+        }
+
+        killNetlifyBadge();
+        var obs = new MutationObserver(killNetlifyBadge);
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+        window.addEventListener('DOMContentLoaded', killNetlifyBadge);
+        window.addEventListener('load', killNetlifyBadge);
+      })();
+    </script>
   </head>
   <body>
     <div id="app"></div>
