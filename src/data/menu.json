@@ -1,0 +1,540 @@
+{
+  "categories": [
+    {
+      "id": "destacados",
+      "name": "Destacados",
+      "kanji": "人気",
+      "icon": "⭐",
+      "description": "Los favoritos indiscutidos de Akamaru Sushi Club"
+    },
+    {
+      "id": "combos",
+      "name": "Combos",
+      "kanji": "盛り合わせ",
+      "icon": "🍱",
+      "description": "Selecciones armadas con los mejores rolls y piezas del chef"
+    },
+    {
+      "id": "rolls",
+      "name": "Rolls",
+      "kanji": "巻き寿司",
+      "icon": "🥢",
+      "description": "Nuestros rolls clásicos y creaciones de autor"
+    },
+    {
+      "id": "hot-rolls",
+      "name": "Hot Rolls",
+      "kanji": "揚げ寿司",
+      "icon": "🔥",
+      "description": "Rolls fritos crocantes al panko servidos tibios con salsas especiales"
+    },
+    {
+      "id": "sushi",
+      "name": "Sushi",
+      "kanji": "寿司",
+      "icon": "🍣",
+      "description": "Geishas, Uramakis y bocados tradicionales con toque contemporáneo"
+    },
+    {
+      "id": "sashimi",
+      "name": "Sashimi",
+      "kanji": "刺身",
+      "icon": "🐟",
+      "description": "Cortes puros de salmón rosado y atún de calidad sashimi"
+    },
+    {
+      "id": "nigiri",
+      "name": "Nigiri",
+      "kanji": "握り",
+      "icon": "🍙",
+      "description": "Cilindro de arroz shari con los mejores cortes y toppings aburi"
+    },
+    {
+      "id": "temaki",
+      "name": "Temaki",
+      "kanji": "手巻き",
+      "icon": "🌯",
+      "description": "Conos crocantes de alga nori rellenos al momento"
+    },
+    {
+      "id": "entradas",
+      "name": "Entradas",
+      "kanji": "前菜",
+      "icon": "🥟",
+      "description": "Gyozas, langostinos furai y bocados para empezar la experiencia"
+    },
+    {
+      "id": "bebidas",
+      "name": "Bebidas",
+      "kanji": "飲み物",
+      "icon": "🍶",
+      "description": "Cervezas japonesas, sake premium, té matcha y refrescos"
+    },
+    {
+      "id": "postres",
+      "name": "Postres",
+      "kanji": "甘味",
+      "icon": "🍡",
+      "description": "Mochis artesanales japoneses y delicias dulces"
+    }
+  ],
+  "defaultExtras": [
+    { "id": "extra-salmon", "name": "Salmón extra", "price": 120 },
+    { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+    { "id": "extra-palta", "name": "Palta extra", "price": 70 },
+    { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 },
+    { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 },
+    { "id": "extra-maracuya", "name": "Salsa Maracuyá dulce", "price": 45 },
+    { "id": "extra-jengibre", "name": "Jengibre y Wasabi extra", "price": 35 }
+  ],
+  "products": [
+    {
+      "id": "salmon-akamaru",
+      "name": "Salmon Akamaru Roll",
+      "category": "rolls",
+      "description": "Salmón fresco, queso Philadelphia y palta cremosa, envuelto en arroz con sésamo tostado y coronado con salmón flambeado y salsa especial Akamaru.",
+      "price": 490,
+      "image": "/images/salmon_akamaru_roll.jpg",
+      "tag": "Más Pedido",
+      "featured": true,
+      "pieces": 10,
+      "available": true,
+      "ingredients": ["Salmón fresco", "Philadelphia", "Palta", "Sésamo tostado", "Salsa especial Akamaru", "Ciboulette"],
+      "removableIngredients": ["Salmón fresco", "Philadelphia", "Palta", "Sésamo tostado", "Salsa especial Akamaru", "Ciboulette"],
+      "extras": [
+        { "id": "extra-salmon", "name": "Salmón extra", "price": 120 },
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-palta", "name": "Palta extra", "price": 70 },
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "box-akamaru-supreme",
+      "name": "Box Akamaru Supreme (30 piezas)",
+      "category": "combos",
+      "description": "El combo definitivo del Club: 10 Salmon Akamaru, 10 Ebi Hot Roll, 5 Nigiri Salmón Aburi y 5 Sashimi de Salmón rosado. Incluye salsas, palitos y wasabi.",
+      "price": 1490,
+      "image": "/images/combo_box_sushi.jpg",
+      "tag": "Recomendado",
+      "featured": true,
+      "pieces": 30,
+      "available": true,
+      "ingredients": ["Salmón fresco", "Langostinos", "Palta", "Philadelphia", "Panko crocante", "Teriyaki"],
+      "removableIngredients": ["Palta", "Philadelphia", "Sésamo", "Wasabi"],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 },
+        { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 },
+        { "id": "extra-jengibre", "name": "Jengibre y Wasabi extra", "price": 35 }
+      ]
+    },
+    {
+      "id": "ebi-hot-roll",
+      "name": "Ebi Hot Roll (Panko Crunch)",
+      "category": "hot-rolls",
+      "description": "Roll crocante rebozado en panko japonés relleno de langostinos crocantes, Philadelphia y ciboulette, terminado con hilos de salsa teriyaki y sweet chili.",
+      "price": 520,
+      "image": "/images/crispy_hot_roll.jpg",
+      "tag": "Más Pedido",
+      "featured": true,
+      "pieces": 10,
+      "available": true,
+      "ingredients": ["Langostinos", "Philadelphia", "Ciboulette", "Panko japonés", "Salsa Teriyaki", "Sweet chili"],
+      "removableIngredients": ["Philadelphia", "Ciboulette", "Salsa Teriyaki", "Sweet chili"],
+      "extras": [
+        { "id": "extra-salmon", "name": "Salmón extra en topping", "price": 120 },
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "sashimi-salmon-tuna",
+      "name": "Sashimi Dúo Salmón & Atún (12 cortes)",
+      "category": "sashimi",
+      "description": "Cortes puros y frescos de salmón rosado chileno de exportación y atún rojo, sobre hielo frappé con hojas de shiso y wasabi artesanal.",
+      "price": 680,
+      "image": "/images/sashimi_platter.jpg",
+      "tag": "Nuevo",
+      "featured": true,
+      "pieces": 12,
+      "available": true,
+      "ingredients": ["Salmón rosado", "Atún rojo", "Hojas de shiso", "Wasabi fresco", "Láminas de lima"],
+      "removableIngredients": ["Wasabi fresco", "Láminas de lima"],
+      "extras": [
+        { "id": "extra-salmon", "name": "4 Cortes extra de Salmón", "price": 180 },
+        { "id": "extra-jengibre", "name": "Jengibre extra", "price": 35 }
+      ]
+    },
+    {
+      "id": "nigiri-aburi-truffle",
+      "name": "Nigiri Master Truffle (8 piezas)",
+      "category": "nigiri",
+      "description": "4 Nigiris de salmón flambeado con toque de aceite de trufa blanca y sal marina + 4 Nigiris de langostinos Ebi con sutil lámina dorada.",
+      "price": 590,
+      "image": "/images/nigiri_selection.jpg",
+      "tag": "Recomendado",
+      "featured": true,
+      "pieces": 8,
+      "available": true,
+      "ingredients": ["Salmón flambeado", "Langostino Ebi", "Aceite de trufa", "Sal marina negra", "Ciboulette"],
+      "removableIngredients": ["Aceite de trufa", "Ciboulette"],
+      "extras": [
+        { "id": "extra-teriyaki", "name": "Topping salsa teriyaki", "price": 40 },
+        { "id": "extra-spicy", "name": "Topping salsa spicy", "price": 40 }
+      ]
+    },
+    {
+      "id": "temaki-salmon-avocado",
+      "name": "Temaki Salmon & Avocado Cone",
+      "category": "temaki",
+      "description": "Cono de alga nori crocante recién armada, rellena de arroz shari templado, tartar de salmón rosado, palta hass, queso crema y sésamo negro.",
+      "price": 390,
+      "image": "/images/temaki_salmon.jpg",
+      "tag": "Más Pedido",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Alga Nori crocante", "Salmón rosado", "Palta Hass", "Philadelphia", "Sésamo negro"],
+      "removableIngredients": ["Salmón rosado", "Palta Hass", "Philadelphia", "Sésamo negro"],
+      "extras": [
+        { "id": "extra-salmon", "name": "Salmón extra", "price": 120 },
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "gyozas-pork-chives",
+      "name": "Gyozas Akamaru (6 unidades)",
+      "category": "entradas",
+      "description": "Empanaditas japonesas artesanales rellenas de cerdo especiado, jengibre y cebolla de verdeo, doradas a la plancha con costra crocante y salsa ponzu.",
+      "price": 380,
+      "image": "/images/gyozas_japanese.jpg",
+      "tag": "Recomendado",
+      "featured": false,
+      "pieces": 6,
+      "available": true,
+      "ingredients": ["Cerdo marinado", "Cebolla de verdeo", "Jengibre fresco", "Masa artesanal", "Salsa Ponzu casera", "Sésamo"],
+      "removableIngredients": ["Cebolla de verdeo", "Sésamo"],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 },
+        { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 }
+      ]
+    },
+    {
+      "id": "combo-tokyo-fusion",
+      "name": "Combo Tokyo Fusion (20 piezas)",
+      "category": "combos",
+      "description": "10 Rolls Salmon Akamaru + 5 Hot Rolls Philadelphia + 5 Nigiri Salmón fresco. La combinación perfecta para compartir entre dos.",
+      "price": 1050,
+      "image": "/images/combo_box_sushi.jpg",
+      "tag": "Promo",
+      "featured": false,
+      "pieces": 20,
+      "available": true,
+      "ingredients": ["Salmón fresco", "Palta", "Philadelphia", "Panko", "Sésamo"],
+      "removableIngredients": ["Palta", "Philadelphia", "Sésamo"],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 },
+        { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 }
+      ]
+    },
+    {
+      "id": "buenos-aires-roll",
+      "name": "Buenos Aires Roll",
+      "category": "rolls",
+      "description": "Salmón fresco, palta hass y langostino crocante, envuelto por fuera con Philadelphia y sésamo mixto con un toque de salsa de maracuyá.",
+      "price": 480,
+      "image": "/images/salmon_akamaru_roll.jpg",
+      "tag": "Recomendado",
+      "featured": false,
+      "pieces": 10,
+      "available": true,
+      "ingredients": ["Salmón fresco", "Langostino crocante", "Palta", "Philadelphia", "Salsa Maracuyá"],
+      "removableIngredients": ["Salmón fresco", "Langostino crocante", "Palta", "Philadelphia", "Salsa Maracuyá"],
+      "extras": [
+        { "id": "extra-salmon", "name": "Salmón extra", "price": 120 },
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-maracuya", "name": "Salsa Maracuyá dulce", "price": 45 }
+      ]
+    },
+    {
+      "id": "veggie-green-roll",
+      "name": "Veggie Zen Roll",
+      "category": "rolls",
+      "description": "Palta cremosa, pepino japonés, espárragos salteados y Philadelphia vegano, cubierto con láminas finas de palta y reducción de soja dulce.",
+      "price": 420,
+      "image": "/images/salmon_akamaru_roll.jpg",
+      "tag": "Veggie",
+      "featured": false,
+      "pieces": 10,
+      "available": true,
+      "ingredients": ["Palta Hass", "Pepino japonés", "Espárragos", "Philadelphia", "Soja dulce"],
+      "removableIngredients": ["Palta Hass", "Pepino japonés", "Espárragos", "Philadelphia"],
+      "extras": [
+        { "id": "extra-palta", "name": "Palta extra", "price": 70 },
+        { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 }
+      ]
+    },
+    {
+      "id": "hot-cheddar-crunch",
+      "name": "Hot Cheddar & Bacon Roll",
+      "category": "hot-rolls",
+      "description": "Roll frito al panko con salmón cocido, queso crema y puerro, gratinado con dip de cheddar fundido y lluvia de bacon crocante artesanal.",
+      "price": 540,
+      "image": "/images/crispy_hot_roll.jpg",
+      "tag": "Picante",
+      "featured": false,
+      "pieces": 10,
+      "available": true,
+      "ingredients": ["Salmón cocido", "Queso crema", "Puerro", "Cheddar suave", "Bacon crocante", "Panko"],
+      "removableIngredients": ["Cheddar suave", "Bacon crocante", "Puerro"],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 },
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 }
+      ]
+    },
+    {
+      "id": "geishas-salmon-phila",
+      "name": "Geishas de Salmón Rosado (5 piezas)",
+      "category": "sushi",
+      "description": "Finas láminas de salmón rosado fresco envolviendo un corazón de Philadelphia y palta, decoradas con sésamo blanco y gotas de teriyaki.",
+      "price": 490,
+      "image": "/images/sashimi_platter.jpg",
+      "tag": "Más Pedido",
+      "featured": false,
+      "pieces": 5,
+      "available": true,
+      "ingredients": ["Láminas de salmón", "Philadelphia", "Palta", "Sésamo blanco", "Salsa teriyaki"],
+      "removableIngredients": ["Palta", "Philadelphia", "Sésamo blanco", "Salsa teriyaki"],
+      "extras": [
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-maracuya", "name": "Salsa Maracuyá dulce", "price": 45 }
+      ]
+    },
+    {
+      "id": "temaki-spicy-tuna",
+      "name": "Temaki Spicy Tuna Cone",
+      "category": "temaki",
+      "description": "Cono de alga crocante relleno de atún rojo picado a cuchillo con sriracha japonesa, ciboulette, aceite de sésamo y masago.",
+      "price": 410,
+      "image": "/images/temaki_salmon.jpg",
+      "tag": "Picante",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Alga Nori", "Atún rojo", "Sriracha picante", "Aceite de sésamo", "Ciboulette", "Masago"],
+      "removableIngredients": ["Sriracha picante", "Ciboulette"],
+      "extras": [
+        { "id": "extra-palta", "name": "Palta extra", "price": 70 },
+        { "id": "extra-spicy", "name": "Salsa Spicy extra", "price": 40 }
+      ]
+    },
+    {
+      "id": "mochis-artesanales",
+      "name": "Trilogía de Mochis Artesanales",
+      "category": "postres",
+      "description": "3 tradicionales pasteles de arroz dulce japonés: Matcha de Kyoto, Frutilla cremosa y Chocolate belga intenso con corazón de crema.",
+      "price": 320,
+      "image": "/images/japanese_mochi.jpg",
+      "tag": "Recomendado",
+      "featured": true,
+      "pieces": 3,
+      "available": true,
+      "ingredients": ["Masa de arroz dulce", "Relleno de matcha", "Relleno de frutilla", "Relleno de chocolate"],
+      "removableIngredients": [],
+      "extras": [
+        { "id": "extra-maracuya", "name": "Coulis de maracuyá dulce", "price": 45 }
+      ]
+    },
+    {
+      "id": "chocotorta-akamaru",
+      "name": "Chocotorta Akamaru Pot",
+      "category": "postres",
+      "description": "Nuestra versión del clásico rioplatense servido en pot individual con capas de galletitas de chocolate, dulce de leche, queso crema y crumble de avellanas.",
+      "price": 260,
+      "image": "/images/japanese_mochi.jpg",
+      "tag": "Nuevo",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Galletitas de chocolate", "Dulce de leche", "Queso crema", "Crumble de avellanas"],
+      "removableIngredients": ["Crumble de avellanas"],
+      "extras": []
+    },
+    {
+      "id": "cerveza-asahi-super-dry",
+      "name": "Cerveza Asahi Super Dry (330ml)",
+      "category": "bebidas",
+      "description": "Auténtica cerveza japonesa importada. Refrescante, ligera y con final seco ('karakuchi'), ideal para maridar con sushi y bocados fritos.",
+      "price": 220,
+      "image": "/images/japanese_drinks.jpg",
+      "tag": "Más Pedido",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Cerveza japonesa importada 330ml"],
+      "removableIngredients": [],
+      "extras": []
+    },
+    {
+      "id": "te-matcha-iced",
+      "name": "Iced Matcha Green Tea (400ml)",
+      "category": "bebidas",
+      "description": "Té verde matcha ceremonial japonés batido con hielo y un toque sutil de almíbar orgánico de caña. Energizante y antioxidante.",
+      "price": 180,
+      "image": "/images/japanese_drinks.jpg",
+      "tag": "Veggie",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Matcha ceremonial", "Agua purificada", "Hielo", "Almíbar de caña"],
+      "removableIngredients": ["Almíbar de caña"],
+      "extras": []
+    },
+    {
+      "id": "hosomaki-salmon-crispy",
+      "name": "Hosomaki Salmon Crispy (8 piezas)",
+      "category": "sushi",
+      "description": "Bocados tradicionales envueltos en alga nori crocante por fuera, arroz shari avinagrado, corazón de salmón fresco y toque crocante de tanuki.",
+      "price": 370,
+      "image": "/images/salmon_akamaru_roll.jpg",
+      "tag": "Nuevo",
+      "featured": false,
+      "pieces": 8,
+      "available": true,
+      "ingredients": ["Alga Nori", "Salmón fresco", "Tanuki crocante", "Arroz shari"],
+      "removableIngredients": ["Tanuki crocante"],
+      "extras": [
+        { "id": "extra-phila", "name": "Philadelphia extra", "price": 80 },
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "sashimi-salmon-rosado",
+      "name": "Sashimi Salmón Rosado (8 cortes)",
+      "category": "sashimi",
+      "description": "8 cortes gruesos de puro salmón fresco chileno seleccionado, servidos sobre cama de hielo frappé con gajos de lima y wasabi.",
+      "price": 540,
+      "image": "/images/sashimi_platter.jpg",
+      "tag": "Más Pedido",
+      "featured": false,
+      "pieces": 8,
+      "available": true,
+      "ingredients": ["Salmón rosado chileno", "Wasabi", "Gajos de lima"],
+      "removableIngredients": ["Wasabi"],
+      "extras": [
+        { "id": "extra-salmon", "name": "4 Cortes extra de Salmón", "price": 180 }
+      ]
+    },
+    {
+      "id": "nigiri-salmon-clasico",
+      "name": "Nigiri Salmón Tradicional (6 piezas)",
+      "category": "nigiri",
+      "description": "Bocados de arroz shari moldeados a mano y cubiertos con láminas de salmón rosado fresco glaseado con salsa nikkei y sésamo.",
+      "price": 440,
+      "image": "/images/nigiri_selection.jpg",
+      "tag": null,
+      "featured": false,
+      "pieces": 6,
+      "available": true,
+      "ingredients": ["Salmón fresco", "Arroz shari", "Glaseado nikkei", "Sésamo"],
+      "removableIngredients": ["Glaseado nikkei", "Sésamo"],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "ebi-furai-langostinos",
+      "name": "Ebi Furai Crocantes (6 unidades)",
+      "category": "entradas",
+      "description": "Langostinos enteros rebozados al estilo japonés en panko crocante dorado, acompañados de dip de mayonesa spicy y salsa tártara casera.",
+      "price": 460,
+      "image": "/images/crispy_hot_roll.jpg",
+      "tag": "Recomendado",
+      "featured": false,
+      "pieces": 6,
+      "available": true,
+      "ingredients": ["Langostinos enteros", "Panko japonés", "Mayonesa spicy", "Salsa tártara", "Limón"],
+      "removableIngredients": ["Mayonesa spicy"],
+      "extras": [
+        { "id": "extra-teriyaki", "name": "Salsa Teriyaki casera", "price": 40 }
+      ]
+    },
+    {
+      "id": "harumakis-vegetales",
+      "name": "Harumakis Crocantes de Verduras (4 unidades)",
+      "category": "entradas",
+      "description": "Rollitos primavera crujientes rellenos de vegetales salteados al wok (repollo, zanahoria, brotes de soja y jengibre) con salsa agridulce.",
+      "price": 310,
+      "image": "/images/gyozas_japanese.jpg",
+      "tag": "Veggie",
+      "featured": false,
+      "pieces": 4,
+      "available": true,
+      "ingredients": ["Masa crocante", "Repollo", "Zanahoria", "Brotes de soja", "Jengibre", "Salsa agridulce"],
+      "removableIngredients": [],
+      "extras": [
+        { "id": "extra-spicy", "name": "Salsa Spicy Akamaru", "price": 40 }
+      ]
+    },
+    {
+      "id": "dorayaki-nutella",
+      "name": "Dorayaki Japonés con Nutella",
+      "category": "postres",
+      "description": "Pancakes japoneses esponjosos y tibios rellenos de abundante crema de avellanas y chocolate Nutella con frutillas frescas.",
+      "price": 280,
+      "image": "/images/japanese_mochi.jpg",
+      "tag": "Nuevo",
+      "featured": false,
+      "pieces": 2,
+      "available": true,
+      "ingredients": ["Pancakes japoneses", "Nutella", "Frutillas frescas", "Azúcar impalpable"],
+      "removableIngredients": ["Frutillas frescas"],
+      "extras": []
+    },
+    {
+      "id": "cerveza-sapporo",
+      "name": "Cerveza Sapporo Premium (330ml)",
+      "category": "bebidas",
+      "description": "Cerveza lager japonesa icónica con notas de malta limpias y final fresco. Servida a temperatura glacial.",
+      "price": 240,
+      "image": "/images/japanese_drinks.jpg",
+      "tag": "Nuevo",
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Cerveza Sapporo 330ml"],
+      "removableIngredients": [],
+      "extras": []
+    },
+    {
+      "id": "refresco-coca-cola",
+      "name": "Coca-Cola Original (500ml)",
+      "category": "bebidas",
+      "description": "Botella individual 500ml bien fría.",
+      "price": 110,
+      "image": "/images/japanese_drinks.jpg",
+      "tag": null,
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Refresco 500ml"],
+      "removableIngredients": [],
+      "extras": []
+    },
+    {
+      "id": "refresco-coca-zero",
+      "name": "Coca-Cola Zero Azúcar (500ml)",
+      "category": "bebidas",
+      "description": "Botella individual 500ml bien fría.",
+      "price": 110,
+      "image": "/images/japanese_drinks.jpg",
+      "tag": null,
+      "featured": false,
+      "pieces": 1,
+      "available": true,
+      "ingredients": ["Refresco sin azúcar 500ml"],
+      "removableIngredients": [],
+      "extras": []
+    }
+  ]
+}

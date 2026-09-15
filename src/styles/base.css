@@ -1,0 +1,253 @@
+/* Base CSS & Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-black);
+  background-color: var(--color-ivory);
+  background-image: 
+    radial-gradient(var(--color-ivory-dark) 1px, transparent 1px),
+    radial-gradient(circle at 100% 0%, rgba(229, 37, 33, 0.04) 0%, transparent 400px);
+  background-size: 24px 24px, 100% 100%;
+  background-position: 0 0, 0 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 90px; /* Space for mobile floating cart */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  transition: all var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  color: var(--color-black);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--color-brand-red);
+  box-shadow: 0 0 0 3px var(--color-brand-red-glow);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 480px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 32px;
+  }
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+.kanji-text {
+  font-family: var(--font-kanji);
+  font-weight: 700;
+}
+
+/* Japanese Accent Details */
+.hanko-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-brand-red);
+  color: var(--color-brand-red);
+  padding: 2px 8px;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  position: relative;
+  background: rgba(229, 37, 33, 0.05);
+}
+
+.brush-stroke {
+  position: relative;
+  display: inline-block;
+}
+
+.brush-stroke::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 8px;
+  background: var(--color-brand-red-light);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.badge-mas-pedido {
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  box-shadow: 0 2px 8px var(--color-brand-red-glow);
+}
+
+.badge-nuevo {
+  background: #2563EB;
+  color: var(--color-white);
+}
+
+.badge-recomendado {
+  background: #111111;
+  color: #F7F3EA;
+}
+
+.badge-promo {
+  background: #D97706;
+  color: var(--color-white);
+}
+
+.badge-veggie {
+  background: #16A34A;
+  color: var(--color-white);
+}
+
+.badge-picante {
+  background: #DC2626;
+  color: var(--color-white);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 14px;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--color-brand-red);
+  color: var(--color-white);
+  box-shadow: var(--shadow-red);
+}
+
+.btn-primary:hover {
+  background: var(--color-brand-red-dark);
+  box-shadow: 0 10px 28px rgba(229, 37, 33, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-gray-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--color-ivory);
+  border-color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-dark:hover {
+  background: var(--color-black-soft);
+  transform: translateY(-2px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray);
+}

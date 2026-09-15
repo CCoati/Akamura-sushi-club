@@ -1,0 +1,25 @@
+{
+  "restaurant": {
+    "name": "AKAMARU SUSHI CLUB",
+    "kanji": "赤丸寿司倶楽部",
+    "slogan": "Sushi con actitud. Tradición japonesa, estilo Akamaru.",
+    "phoneDisplay": "+598 99 123 456",
+    "whatsappNumber": "59899123456",
+    "location": "Montevideo, Uruguay",
+    "address": "Av. Brasil 2640, Pocitos, Montevideo",
+    "currency": "$U",
+    "deliveryFee": 120,
+    "deliveryTime": "35–60 min",
+    "pickupTime": "20–30 min",
+    "schedule": "Mar a Dom: 19:30 – 00:00 hs",
+    "instagram": "@akamaru.sushi",
+    "mercadoPagoLink": "https://mpago.la/akamaru-sushi-club",
+    "bankInfo": {
+      "bank": "BROU (Banco República)",
+      "holder": "AKAMARU SUSHI CLUB S.R.L.",
+      "accountType": "Caja de Ahorros en Pesos ($U)",
+      "accountNumber": "001558932-00003",
+      "alias": "AKAMARU.SUSHI.BROU"
+    }
+  }
+}
